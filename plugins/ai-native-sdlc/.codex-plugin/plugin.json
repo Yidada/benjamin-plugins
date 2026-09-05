@@ -1,0 +1,27 @@
+{
+  "name": "ai-native-sdlc",
+  "version": "0.1.0+codex.20260905062440",
+  "description": "Seven reusable software delivery skills with explicit lifecycle coordination, project-aware checks and evidence records.",
+  "author": {
+    "name": "Benjamin"
+  },
+  "license": "UNLICENSED",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI-Native SDLC",
+    "shortDescription": "Seven skills for planning, building and delivering software.",
+    "longDescription": "Global software workflow toolkit: an explicitly invoked lifecycle coordinator plus six focused skills for requirements, design, implementation, verification, release and maintenance. Uses the existing project toolchain and preserves scoped authorization.",
+    "developerName": "Benjamin",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "\u7528 $ai-native-sdlc start \u5b9e\u73b0\u8fd9\u4e2a\u9700\u6c42\u5e76\u5b8c\u6210\u9a8c\u8bc1\u3002",
+      "\u7528 $sdlc-test \u68c0\u67e5\u5f53\u524d\u53d8\u66f4\u7684\u7f3a\u9677\u4e0e\u9a8c\u8bc1\u7f3a\u53e3\u3002",
+      "\u7528 $ai-native-sdlc audit \u53ea\u8bfb\u68c0\u67e5\u5f53\u524d\u9879\u76ee\u3002"
+    ]
+  }
+}

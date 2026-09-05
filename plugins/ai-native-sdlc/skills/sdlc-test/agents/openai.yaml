@@ -1,0 +1,6 @@
+interface:
+  display_name: "测试、评估与代码审查"
+  short_description: "Verify software changes, diagnose failing checks, review a di"
+  default_prompt: "Use $sdlc-test to handle this software task within the current project scope."
+policy:
+  allow_implicit_invocation: true

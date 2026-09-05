@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact_policy": "tracked",
+  "change_root": ".sdlc/changes",
+  "commands": {
+    "build": [],
+    "lint": [],
+    "test": [],
+    "typecheck": []
+  },
+  "protected_paths": [],
+  "production_environments": [
+    "production",
+    "prod"
+  ]
+}

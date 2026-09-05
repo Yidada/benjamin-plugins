@@ -1,0 +1,6 @@
+interface:
+  display_name: "故障诊断与持续改进"
+  short_description: "Investigate software incidents, operational regressions, depe"
+  default_prompt: "Use $sdlc-maintain to handle this software task within the current project scope."
+policy:
+  allow_implicit_invocation: true

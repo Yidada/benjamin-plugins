@@ -1,0 +1,6 @@
+interface:
+  display_name: "需求与任务规划"
+  short_description: "Clarify software requirements, feature scope, acceptance crit"
+  default_prompt: "Use $sdlc-plan to handle this software task within the current project scope."
+policy:
+  allow_implicit_invocation: true
