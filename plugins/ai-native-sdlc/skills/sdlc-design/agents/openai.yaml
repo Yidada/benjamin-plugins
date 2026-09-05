@@ -1,5 +1,5 @@
 interface:
-  display_name: "软件方案与接口设计"
+  display_name: "2. 软件方案与接口设计"
   short_description: "Design software behavior, architecture, APIs, data contracts "
   default_prompt: "Use $sdlc-design to handle this software task within the current project scope."
 policy:

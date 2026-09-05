@@ -1,5 +1,5 @@
 interface:
-  display_name: "AI-Native SDLC"
+  display_name: "0. AI-Native SDLC"
   short_description: "Run risk-tiered SDLC workflows with auditable artifacts"
   brand_color: "#3B82F6"
   default_prompt: "Use $ai-native-sdlc to bootstrap this repository and assess its current SDLC state."

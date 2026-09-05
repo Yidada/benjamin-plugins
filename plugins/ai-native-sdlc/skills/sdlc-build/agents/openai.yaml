@@ -1,5 +1,5 @@
 interface:
-  display_name: "实现与缺陷修复"
+  display_name: "3. 实现与缺陷修复"
   short_description: "Implement a scoped software feature, bug fix or refactor usin"
   default_prompt: "Use $sdlc-build to handle this software task within the current project scope."
 policy:

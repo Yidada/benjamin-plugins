@@ -22,21 +22,23 @@ codex plugin add loopx@personal
 
 ## 使用
 
+选择菜单中的显示名称按 0–6 编号：0 为总流程，1–6 对应规划、设计、开发、测试、发布和维护。序号帮助识别阶段；调用仍使用原有 `$skill-name`。
+
 ```text
 用 $ai-native-sdlc start 实现分页 API，交付本地代码并完成验证。
 用 $sdlc-test 只读检查当前 diff，找出缺陷和验证缺口。
 用 $ai-native-sdlc audit 只读检查当前项目的流程与证据。
 ```
 
-| Skill | 用途 |
-|---|---|
-| `$ai-native-sdlc` | 用户明确调用后，管理完整生命周期、风险和证据 |
-| `$sdlc-plan` | 问题定义、验收条件和计划 |
-| `$sdlc-design` | 方案、接口、数据和兼容性 |
-| `$sdlc-build` | 实现、修复和重构 |
-| `$sdlc-test` | 测试、评估和代码审查 |
-| `$sdlc-release` | PR、发布和回滚 |
-| `$sdlc-maintain` | 故障诊断和维护 |
+| 序号 | Skill | 用途 |
+|---|---|---|
+| 0 | `$ai-native-sdlc` | 用户明确调用后，管理完整生命周期、风险和证据 |
+| 1 | `$sdlc-plan` | 问题定义、验收条件和计划 |
+| 2 | `$sdlc-design` | 方案、接口、数据和兼容性 |
+| 3 | `$sdlc-build` | 实现、修复和重构 |
+| 4 | `$sdlc-test` | 测试、评估和代码审查 |
+| 5 | `$sdlc-release` | PR、发布和回滚 |
+| 6 | `$sdlc-maintain` | 故障诊断和维护 |
 
 专项 Skills 可按当前任务选用。项目自己的 `AGENTS.md`、技术栈和命令继续生效。详细行为及边界见 [插件说明](plugins/ai-native-sdlc/README.md)。
 

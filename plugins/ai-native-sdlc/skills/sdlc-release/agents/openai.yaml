@@ -1,5 +1,5 @@
 interface:
-  display_name: "发布与交付验证"
+  display_name: "5. 发布与交付验证"
   short_description: "Prepare or execute a requested software PR, release, deployme"
   default_prompt: "Use $sdlc-release to handle this software task within the current project scope."
 policy:
