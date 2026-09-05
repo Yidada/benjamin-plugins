@@ -23,3 +23,5 @@ jobs:
         run: python scripts/validate.py
       - name: Test SDLC CLI
         run: python plugins/ai-native-sdlc/skills/ai-native-sdlc/scripts/test_sdlc.py
+      - name: Test LoopX preflight
+        run: python plugins/loopx/skills/loopx/scripts/test_preflight.py

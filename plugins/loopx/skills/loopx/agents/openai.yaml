@@ -1,0 +1,7 @@
+interface:
+  display_name: "LoopX"
+  short_description: "Run durable goals with evidence and bounded continuation"
+  default_prompt: "用 $loopx 启动当前项目的长期任务，记录验收条件并完成第一轮可验证推进。"
+
+policy:
+  allow_implicit_invocation: true

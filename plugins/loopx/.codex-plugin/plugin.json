@@ -1,0 +1,27 @@
+{
+  "name": "loopx",
+  "version": "0.1.0",
+  "description": "Durable long-running goals with the official LoopX kernel: evidence, recovery, replanning and governed continuation.",
+  "author": {
+    "name": "Benjamin"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LoopX",
+    "shortDescription": "长期任务、证据验收、断点恢复与受控调度。",
+    "longDescription": "Connect the official LoopX CLI to Codex projects. Start and resume persistent goals, inspect evidence and user decisions, and follow validated continuation and scheduling contracts. Requires a project runtime; background execution depends on a verified host driver.",
+    "developerName": "Benjamin",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "用 $loopx start 重构当前模块，先明确验收条件，然后完成第一轮验证。",
+      "用 $loopx status 查看当前目标、证据、阻塞与下一步。",
+      "用 $loopx resume 接着上一次的任务继续。"
+    ]
+  },
+  "license": "UNLICENSED"
+}

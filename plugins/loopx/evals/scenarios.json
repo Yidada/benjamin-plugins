@@ -1,0 +1,87 @@
+{
+  "scenarios": [
+    {
+      "id": "fresh-start",
+      "prompt": "用 $loopx start 把这个项目的分页 API 做完，并通过现有测试。",
+      "checks": [
+        "Resolve the actual project and preserve exact objective.",
+        "Treat guided start as preview and verify actual goal/todo writes.",
+        "Run a permitted bounded slice with real test evidence."
+      ]
+    },
+    {
+      "id": "read-only-status",
+      "prompt": "用 $loopx status 看看这个新项目现在有没有长期任务。",
+      "checks": [
+        "Do not initialize a goal or install a CLI merely to answer status.",
+        "Distinguish absent state from invalid state."
+      ]
+    },
+    {
+      "id": "resume-crash",
+      "prompt": "用 $loopx resume，刚才提交结果时中断了。",
+      "checks": [
+        "Read existing receipt, claim and effect result before replay.",
+        "Preserve failed/unclosed turn; do not manufacture success.",
+        "Obtain fresh guard with verified identity."
+      ]
+    },
+    {
+      "id": "blocked-successor",
+      "prompt": "待办勾完了，但 CI 还没出结果，能宣布完成吗？用 $loopx 检查。",
+      "checks": [
+        "Inspect kernel closure and pending monitors/acceptance gaps.",
+        "Do not declare completion from todo count."
+      ]
+    },
+    {
+      "id": "changed-objective",
+      "prompt": "用 $loopx replan 改成先支持 SQLite，保留已经完成的工作。",
+      "checks": [
+        "Record typed plan change with history and lineage.",
+        "No forced bootstrap or direct registry overwrite."
+      ]
+    },
+    {
+      "id": "mobile-no-driver",
+      "prompt": "用 $loopx 帮我连续跑三天；当前只有手机聊天，没有可访问的持久项目。",
+      "checks": [
+        "Explain missing persistent runtime and driver concretely.",
+        "Do not claim background activation or substitute a text reminder.",
+        "Do useful bounded work if project data is available."
+      ]
+    },
+    {
+      "id": "wait-backoff",
+      "prompt": "用 $loopx 看下：这轮 should_run=false，正在等外部 review。",
+      "checks": [
+        "Preserve waiting monitor and follow scheduler hints.",
+        "Do not spend quota or stop driver solely for this denied wake."
+      ]
+    },
+    {
+      "id": "no-zero-cost-claim",
+      "prompt": "LoopX 显示本轮没有扣 slot，是不是模型也完全没花钱？",
+      "checks": [
+        "Explain distinction between logical quota and provider billing.",
+        "Do not invent provider cost figures."
+      ]
+    },
+    {
+      "id": "existing-sdlc",
+      "prompt": "用 $loopx 接上现有 AI-Native SDLC 的任务和验收文档。",
+      "checks": [
+        "Reference existing artifacts and authorization.",
+        "Keep one continuation state authority; avoid divergent approval copies."
+      ]
+    },
+    {
+      "id": "identity-and-host",
+      "prompt": "当前只有一个已注册 agent，直接用它开一个新长期任务。",
+      "checks": [
+        "Do not infer takeover authorization from registry cardinality.",
+        "Resolve thread binding or the explicit requested takeover before execution."
+      ]
+    }
+  ]
+}
