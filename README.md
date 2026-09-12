@@ -1,6 +1,6 @@
 # Benjamin Plugins
 
-Benjamin 的 Codex 插件仓库。包含 **AI-Native SDLC**（完整软件流程与六个专项 Skills）和 **LoopX**（长期任务、证据验收与持续执行），可在不同项目中复用。
+Benjamin 的 Codex 插件仓库。包含 **AI-Native SDLC**（完整软件流程与六个专项 Skills）、**LoopX**（长期任务、证据验收与持续执行）和 **AI Video Motion Replica**（白模动作复刻做 AI 视频），可在不同项目中复用。
 
 这个仓库负责保存版本和分发安装包。插件安装到每台机器的 Codex 后，在该机器的项目中使用。
 
@@ -12,6 +12,7 @@ Benjamin 的 Codex 插件仓库。包含 **AI-Native SDLC**（完整软件流程
 codex plugin marketplace add git@github.com:Yidada/benjamin-plugins.git --ref main
 codex plugin add ai-native-sdlc@personal
 codex plugin add loopx@personal
+codex plugin add ai-video-motion-replica@personal
 ```
 
 安装后在 Codex 中新建任务。仓库名称为 `benjamin-plugins`，仓库内 marketplace 的标识为 `personal`，安装命令使用后者。
@@ -52,6 +53,17 @@ codex plugin add loopx@personal
 
 LoopX 复用官方内核，执行机器需要 Python 3.11+。跨会话推进需要持久项目及实际宿主调度器；插件创建本身不会启动后台任务。详见 [LoopX 插件说明](plugins/loopx/README.md)。
 
+### AI Video Motion Replica
+
+用白模（深度动作捕捉）复刻参考视频的动作、走位和机位，再生成人物三视图与空场景图渲染成片。
+
+```text
+用 $ai-video-motion-replica 把这段参考视频的动作复刻成我的角色。
+用 $ai-video-motion-replica 做一段 10 秒四人齐舞，主角是 A，后排在 B/C/D。
+```
+
+详细流程见 [插件说明](plugins/ai-video-motion-replica/README.md)。
+
 ## 更新已安装的版本
 
 完成上面的 Git marketplace 安装后，运行：
@@ -81,17 +93,18 @@ python3 -m venv .venv
 - `scripts/validate.py` 检查 marketplace、插件目录、Skills、YAML、相对链接和评估案例格式。
 - `test_sdlc.py` 在临时目录中运行 28 个 CLI 测试，覆盖路径边界、审批记录、阶段条件与变更恢复。
 - GitHub Actions 在 push、pull request 和手动触发时执行上述检查。
-- AI-Native SDLC 自带 12 个行为评估案例，LoopX 自带 10 个；此 CI 仅验证案例结构，模型评估需另外执行。
+- AI-Native SDLC 自带 12 个行为评估案例，LoopX 自带 10 个，AI Video Motion Replica 自带 4 个；此 CI 仅验证案例结构，模型评估需另外执行。
 - 更新插件内容时同时更新 manifest 的 `version`，以便客户端获取新版本。使用 Codex 的 `plugin-creator` 维护本地版本时，按该 Skill 的 cachebuster helper 流程执行。
 
 ## 文件结构
 
 ```text
-.agents/plugins/marketplace.json    安装目录
-.github/workflows/validate.yml      持续校验
-plugins/ai-native-sdlc/             插件源码
-plugins/loopx/                      长期任务插件
-scripts/validate.py                仓库结构校验
+.agents/plugins/marketplace.json        安装目录
+.github/workflows/validate.yml          持续校验
+plugins/ai-native-sdlc/                 插件源码
+plugins/loopx/                          长期任务插件
+plugins/ai-video-motion-replica/        白模动作复刻插件
+scripts/validate.py                    仓库结构校验
 ```
 
-概念来源及独立实现说明见 [SOURCE.md](plugins/ai-native-sdlc/SOURCE.md)。当前插件为私人使用，manifest 标记为 `UNLICENSED`。
+概念来源及独立实现说明见各插件目录下的 `SOURCE.md`。当前插件为私人使用，manifest 标记为 `UNLICENSED`。

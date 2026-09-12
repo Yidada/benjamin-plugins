@@ -1,0 +1,41 @@
+{
+  "execution": "Manual or authorized isolated agent evaluation; no scheduled evaluator installed",
+  "scenarios": [
+    {
+      "id": "dance-replica",
+      "prompt": "用白模流程把这个参考舞蹈视频的动作复刻成我的角色。",
+      "checks": [
+        "Reference video converted to a clean white-model depth reference",
+        "Character turnaround sheet generated for identity consistency",
+        "Video prompt only describes details the white model cannot carry"
+      ]
+    },
+    {
+      "id": "multi-dancer",
+      "prompt": "复刻一段 10 秒四人街舞齐舞，保留队形和卡点。",
+      "checks": [
+        "Each dancer named and referenced individually",
+        "Character order, formation and hit stops specified",
+        "No dropped or fused dancers in the result"
+      ]
+    },
+    {
+      "id": "fight-scene",
+      "prompt": "把只狼 Boss 战的动作换成成龙和水墨风角色。",
+      "checks": [
+        "Motion, blocking and camera kept from the white model",
+        "Impact sparks, cloth motion and expression added via prompt",
+        "Two characters remain visually separate"
+      ]
+    },
+    {
+      "id": "long-clip-segmentation",
+      "prompt": "生成一段 15 秒的动作视频，但其中一段不满意。",
+      "checks": [
+        "Clip split into shorter segments and regenerated",
+        "Segments concatenated into the final output",
+        "Intermediate assets kept for reproducibility"
+      ]
+    }
+  ]
+}

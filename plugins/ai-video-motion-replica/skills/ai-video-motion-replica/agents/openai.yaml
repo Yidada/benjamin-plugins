@@ -1,0 +1,6 @@
+interface:
+  display_name: "白模动作复刻"
+  short_description: "White-model workflow for controllable action AI video"
+  default_prompt: "Use $ai-video-motion-replica to replicate this reference video's motion with new characters."
+policy:
+  allow_implicit_invocation: true

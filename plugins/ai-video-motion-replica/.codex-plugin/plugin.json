@@ -1,0 +1,25 @@
+{
+  "name": "ai-video-motion-replica",
+  "version": "0.1.0+codex.20260912100000",
+  "description": "Replicate dance, martial-arts and fight motion in AI video with a clean white-model depth reference, then repaint characters and scenes from reference images.",
+  "author": {
+    "name": "Benjamin"
+  },
+  "license": "UNLICENSED",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Video Motion Replica",
+    "shortDescription": "White-model workflow for controllable action AI video.",
+    "longDescription": "Turn a reference dance or fight video into a white-model depth reference, generate character turnaround sheets and an empty scene, then render the final clip with MiniMax H3 or Libtv while keeping the original motion, blocking and camera movement.",
+    "developerName": "Benjamin",
+    "category": "Creative",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "\u7528 $ai-video-motion-replica \u628a\u8fd9\u6bb5\u53c2\u8003\u89c6\u9891\u7684\u52a8\u4f5c\u590d\u523b\u6210\u6211\u7684\u89d2\u8272\u3002",
+      "\u7528\u767d\u6a21\u6d41\u7a0b\u505a\u4e00\u6bb5\u8857\u821e\u591a\u4eba\u9f50\u821e\u89c6\u9891\u3002"
+    ]
+  }
+}
