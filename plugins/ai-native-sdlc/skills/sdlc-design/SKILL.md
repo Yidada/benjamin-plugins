@@ -1,6 +1,6 @@
 ---
 name: sdlc-design
-description: "Design software behavior, architecture, APIs, data contracts and compatibility for a feature or refactor. Use when an implementation needs a concrete design decision."
+description: "Turn an intent into a requirements and design spec in one session, applying project and policy standards while writing and flagging conflicts. Use when an implementation needs behavior, architecture, API, data contract or compatibility decisions."
 ---
 
 # 软件方案与接口设计
@@ -13,12 +13,13 @@ description: "Design software behavior, architecture, APIs, data contracts and c
 
 ## Workflow
 
+This is the Design play: requirements and design compressed into one session, with policy applied while the spec is written.
 
-1. Read the existing call path, public contracts, persisted data and relevant tests. State what evidence is current.
-2. Describe inputs, outputs, invariants and failure behavior. Map acceptance examples to the proposed boundaries.
-3. Compare alternatives only when they change cost, compatibility, risk or user experience. Select one and explain its tradeoff.
-4. For API/data changes, describe old/new compatibility, rollout ordering, migration and rollback limits. For UI changes, describe normal/empty/loading/error states and accessibility where relevant.
-5. Define checks at the boundary that may fail. Avoid assuming a framework, cloud or datastore.
-6. Make the design concrete enough to review before an irreversible decision. Reuse applicable prior authorization and flag unresolved high-impact choices.
+1. Read the intent, the existing call path, public contracts, persisted data, relevant tests, and every applicable standard: project `AGENTS.md`, security, compliance, UX, API and brand conventions available as skills. State what evidence is current.
+2. Describe user-visible behavior, interfaces and data, system boundaries, failure and edge cases, and non-functional requirements. Map each success criterion in the intent to a concrete check. For API or data changes describe old/new compatibility, rollout ordering, migration and rollback limits. For UI changes describe normal, empty, loading and error states, and accessibility where relevant.
+3. Flag concerns as you write, especially standards that cannot be satisfied or policies that contradict each other. Name the owner who must decide instead of resolving the conflict silently.
+4. Compare alternatives only when they change cost, compatibility, risk or user experience. Select one and explain its tradeoff. Avoid assuming a framework, cloud or datastore.
+5. Check the spec against the intent: does it solve the stated problem, and are the open questions answered or carried forward?
+6. Make the design concrete enough for a human to decide whether it progresses to Build, consulting a technical lead for higher-risk changes. Reuse applicable prior authorization and flag unresolved high-impact choices.
 
-Output: behavior/contracts, affected boundaries, decision rationale and verification plan. Update spec.md and decisions.md when the lifecycle is active.
+Output: behavior and contracts, affected boundaries, decision rationale, concerns, and a verification plan. Update spec.md and decisions.md when the lifecycle is active.

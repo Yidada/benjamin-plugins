@@ -1,7 +1,7 @@
 {
   "name": "ai-native-sdlc",
-  "version": "0.1.0+codex.20260905134338",
-  "description": "Seven reusable software delivery skills with explicit lifecycle coordination, project-aware checks and evidence records.",
+  "version": "0.2.0+codex.20260919120000",
+  "description": "Seven reusable software delivery skills aligned with the AI-native SDLC loop: committed artifacts per stage, human gates, project-aware checks and evidence records.",
   "author": {
     "name": "Benjamin"
   },
@@ -10,7 +10,7 @@
   "interface": {
     "displayName": "AI-Native SDLC",
     "shortDescription": "Seven skills for planning, building and delivering software.",
-    "longDescription": "Global software workflow toolkit: an explicitly invoked lifecycle coordinator plus six focused skills for requirements, design, implementation, verification, release and maintenance. Uses the existing project toolchain and preserves scoped authorization.",
+    "longDescription": "Global software workflow toolkit built on the AI-native SDLC loop (Plan → Design → Build → Test → Deploy → Maintain): an explicitly invoked coordinator plus six focused skills for intent, design, implementation, verification, release and maintenance. Every stage commits an artifact the next stage reads, humans hold the gates, and the agent stops at the production gate. Uses the existing project toolchain and preserves scoped authorization.",
     "developerName": "Benjamin",
     "category": "Coding",
     "capabilities": [
