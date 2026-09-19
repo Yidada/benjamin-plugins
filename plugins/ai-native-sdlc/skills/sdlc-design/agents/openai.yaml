@@ -1,6 +1,6 @@
 interface:
   display_name: "2. 软件方案与接口设计"
-  short_description: "Design software behavior, architecture, APIs, data contracts "
-  default_prompt: "Use $sdlc-design to handle this software task within the current project scope."
+  short_description: "Intent to spec in one session, applying standards as skills"
+  default_prompt: "Use $sdlc-design to turn this intent into a spec within the current project scope."
 policy:
   allow_implicit_invocation: true

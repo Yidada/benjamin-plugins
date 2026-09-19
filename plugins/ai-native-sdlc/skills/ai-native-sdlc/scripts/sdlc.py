@@ -51,9 +51,10 @@ INTEGRATION_HEADING = "## AI-Native SDLC Integration"
 INTEGRATION_BLOCK = """## AI-Native SDLC Integration
 
 - Load `$ai-native-sdlc` only when the user explicitly invokes it.
-- Keep lifecycle artifacts in `.sdlc/changes/<change-id>/` and commit them with the related code.
-- Read `.sdlc/config.json` and the active change's `state.json` before advancing the workflow.
+- Keep lifecycle artifacts in `.sdlc/changes/<change-id>/` and commit them with the related code. Every stage commits an artifact the next stage reads: intent.md, spec.md, plan.md, the diff and tests, evidence.md, review.md, and a new intent.md for follow-ups.
+- Read `.sdlc/config.json` and the active change's `state.json` before advancing the workflow. Nothing is implemented without an accepted plan.md.
 - Repository and closer `AGENTS.md` instructions own architecture, commands, style, and technical constraints. The plugin owns lifecycle stages, risk, gates, artifacts, and evidence.
+- When the same mistake happens twice, add the correction to this file.
 """
 
 
@@ -373,7 +374,9 @@ def next_action(state: dict[str, Any], issues: list[str]) -> str:
             return "Request explicit production gate approval before release."
     stage = str(state.get("current_stage"))
     if stage == "maintain":
-        return "Run close validation, then close the change."
+        return "Record the delivery result and follow-up conditions, then run close validation and close the change."
+    if stage in {"plan", "design"}:
+        return f"Advance the {stage} stage using its reference; write and accept plan.md in plan mode before entering build."
     return f"Advance the {stage} stage using its reference and record evidence."
 
 
@@ -491,7 +494,7 @@ def command_start(args: argparse.Namespace) -> int:
             "risk": args.risk,
             "current_stage": "plan",
             "created": ["state.json", *required],
-            "next_action": "Fill intent.md with the steelmanned goal and verified repository context.",
+            "next_action": "Fill intent.md in the originator's words: source, problem, outcome, affected systems, constraints, out of scope, success criteria, open questions.",
         }
     )
     return 0

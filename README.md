@@ -23,7 +23,7 @@ codex plugin add ai-video-motion-replica@personal
 
 ## 使用
 
-选择菜单中的显示名称按 0–6 编号：0 为总流程，1–6 对应规划、设计、开发、测试、发布和维护。序号帮助识别阶段；调用仍使用原有 `$skill-name`。
+选择菜单中的显示名称按 0–6 编号：0 为总流程，1–6 对应意图、设计、开发、测试、发布和维护。序号帮助识别阶段；调用仍使用原有 `$skill-name`。
 
 ```text
 用 $ai-native-sdlc start 实现分页 API，交付本地代码并完成验证。
@@ -31,17 +31,17 @@ codex plugin add ai-video-motion-replica@personal
 用 $ai-native-sdlc audit 只读检查当前项目的流程与证据。
 ```
 
-| 序号 | Skill | 用途 |
-|---|---|---|
-| 0 | `$ai-native-sdlc` | 用户明确调用后，管理完整生命周期、风险和证据 |
-| 1 | `$sdlc-plan` | 问题定义、验收条件和计划 |
-| 2 | `$sdlc-design` | 方案、接口、数据和兼容性 |
-| 3 | `$sdlc-build` | 实现、修复和重构 |
-| 4 | `$sdlc-test` | 测试、评估和代码审查 |
-| 5 | `$sdlc-release` | PR、发布和回滚 |
-| 6 | `$sdlc-maintain` | 故障诊断和维护 |
+| 序号 | Skill | 阶段 play | 提交的工件 |
+|---|---|---|---|
+| 0 | `$ai-native-sdlc` | 用户明确调用后，管理完整循环、风险、门禁和证据 | 全部工件 |
+| 1 | `$sdlc-plan` | 用发起人的原话捕获意图 | intent.md |
+| 2 | `$sdlc-design` | 一次会话完成需求与设计 | spec.md |
+| 3 | `$sdlc-build` | 先 plan mode 再实现，自我验证 | plan.md、diff 与测试 |
+| 4 | `$sdlc-test` | 持续评估与分级审查 | evidence.md、review.md |
+| 5 | `$sdlc-release` | PR、发布和回滚，止步于生产门禁 | PR 与发布记录 |
+| 6 | `$sdlc-maintain` | 由触发器启动诊断，写回新的 intent | 事故记录、新 intent.md |
 
-专项 Skills 可按当前任务选用。项目自己的 `AGENTS.md`、技术栈和命令继续生效。详细行为及边界见 [插件说明](plugins/ai-native-sdlc/README.md)。
+整体逻辑对齐 Anthropic 的 [AI-Native SDLC playbook](https://claude.com/blog/the-ai-native-sdlc-playbook)：六个阶段构成循环，每个阶段提交一份工件供下一阶段读取，人负责门禁判断，Agent 走到生产门禁为止。专项 Skills 可按当前任务选用。项目自己的 `AGENTS.md`、技术栈和命令继续生效。详细行为及边界见 [插件说明](plugins/ai-native-sdlc/README.md)。
 
 ### LoopX 长期任务
 
@@ -93,7 +93,7 @@ python3 -m venv .venv
 - `scripts/validate.py` 检查 marketplace、插件目录、Skills、YAML、相对链接和评估案例格式。
 - `test_sdlc.py` 在临时目录中运行 28 个 CLI 测试，覆盖路径边界、审批记录、阶段条件与变更恢复。
 - GitHub Actions 在 push、pull request 和手动触发时执行上述检查。
-- AI-Native SDLC 自带 12 个行为评估案例，LoopX 自带 10 个，AI Video Motion Replica 自带 4 个；此 CI 仅验证案例结构，模型评估需另外执行。
+- AI-Native SDLC 自带 20 个行为评估案例，LoopX 自带 10 个，AI Video Motion Replica 自带 4 个；此 CI 仅验证案例结构，模型评估需另外执行。
 - 更新插件内容时同时更新 manifest 的 `version`，以便客户端获取新版本。使用 Codex 的 `plugin-creator` 维护本地版本时，按该 Skill 的 cachebuster helper 流程执行。
 
 ## 文件结构

@@ -3,14 +3,19 @@
 - Change ID: `{{CHANGE_ID}}`
 - Risk: `{{RISK}}`
 - Created: `{{CREATED_AT}}`
+- Read by: Design (Build for R1). Accepted by the owner before the next stage starts.
+
+## Source
+
+<!-- REQUIRED: Link the originating request, issue, incident record, or band breach, and name the originator. Keep the originator's own words; do not translate them into implementation. -->
 
 ## Problem
 
-<!-- REQUIRED: State the source-observed problem, who experiences it, and why it matters now. -->
+<!-- REQUIRED: State what cannot be done today, who experiences it, and why it matters now. -->
 
 ## Proposed outcome
 
-<!-- REQUIRED: Describe the observable outcome without prescribing unnecessary implementation detail. -->
+<!-- REQUIRED: Describe what better looks like as an observable outcome without prescribing unnecessary implementation detail. -->
 
 ## Affected users and systems
 
@@ -26,8 +31,8 @@
 
 ## Success criteria
 
-<!-- REQUIRED: Add measurable acceptance criteria and the evidence that will prove each one. -->
+<!-- REQUIRED: Add observable acceptance examples and the evidence that will prove each one. -->
 
 ## Open questions
 
-<!-- REQUIRED: List unresolved decisions, or write `None` with the evidence that supports that conclusion. -->
+<!-- REQUIRED: List unresolved decisions to answer or carry forward into spec.md, or write `None` with the evidence that supports that conclusion. -->
